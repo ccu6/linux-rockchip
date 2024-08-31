@@ -17,8 +17,12 @@
 #include "rk3566.dtsi"
 
 / {
+	model = "lckfb tspi V10 Board";
+	compatible = "JP-TVbox,rk3566", "rockchip,rk3566";
+	/*
 	model = "TaishanPi V10 Board";
 	compatible = "lckfb,tspi-v10", "rockchip,rk3566";
+	*/
 
 	fiq-debugger {
 		compatible = "rockchip,fiq-debugger";
