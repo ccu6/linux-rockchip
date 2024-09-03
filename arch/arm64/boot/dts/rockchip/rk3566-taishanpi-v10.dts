@@ -898,7 +898,12 @@
 	maximum-speed = "high-speed", "super-speed"; 
 	status = "okay";
 };
+
 &combphy1_usq {
+	status = "okay";
+};
+
+&combphy2_psq {
 	status = "okay";
 };
 
@@ -1135,7 +1140,7 @@
 };
 
 &usbdrd_dwc3 {
-	dr_mode = "otg";
+	dr_mode = "host";
 	extcon = <&usb2phy0>;
 	status = "okay";
 };
