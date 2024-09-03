@@ -266,7 +266,7 @@
 		rgb_led_b: rgb-led-b {
 			gpios = <&gpio1 RK_PB0 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
-			linux,delay-reg = <100>;
+			linux,delay-reg = <200>;
 			linux,blink-delay-on = <1500>; 
 			linux,blink-delay-off = <1500>;
 		};
