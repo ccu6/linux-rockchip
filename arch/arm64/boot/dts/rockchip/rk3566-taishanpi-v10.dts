@@ -253,21 +253,21 @@
 			gpios = <&gpio1 RK_PB2 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			linux,delay-reg = <0>;
-			linux,blink-delay-on = <500>;
-			linux,blink-delay-off = <500>;
+			linux,blink-delay-on = <200>;
+			linux,blink-delay-off = <200>;
 		};
 		rgb_led_g: rgb-led-g {
 			gpios = <&gpio1 RK_PB1 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			linux,delay-reg = <100>;
-			linux,blink-delay-on = <1000>; 
-			linux,blink-delay-off = <1000>;
+			linux,blink-delay-on = <400>; 
+			linux,blink-delay-off = <400>;
 		};
 		rgb_led_b: rgb-led-b {
 			gpios = <&gpio1 RK_PB0 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			linux,delay-reg = <200>;
-			linux,blink-delay-on = <1500>; 
+			linux,blink-delay-on = <600>; 
 			linux,blink-delay-off = <1500>;
 		};
 	};
@@ -1123,6 +1123,12 @@
 };
 
 &usb_host1_ohci {
+	status = "okay";
+};
+
+&usb_host1_xhci {
+	phy-names = "usb2-phy", "usb3-phy";
+	phys = <&usb2phy1_host>, <&combphy1 PHY_TYPE_USB3>;
 	status = "okay";
 };
 
