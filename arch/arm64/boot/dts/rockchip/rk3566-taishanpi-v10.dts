@@ -895,19 +895,15 @@
 };
 
 &usbhost_dwc3 {
-	phys = <&u2phy0_host>; 
-	phy-names = "usb2-phy", "usb3-phy";
 	maximum-speed = "high-speed", "super-speed"; 
 	status = "okay";
 };
 &combphy1_usq {
-	// rockchip,dis-u3otg1-port; 
 	status = "okay";
 };
 
 &sata1 {
-	// rockchip,enable-ssc;
-	status = "disable";
+	status = "disabled";
 };
 
 &rk_headset {
