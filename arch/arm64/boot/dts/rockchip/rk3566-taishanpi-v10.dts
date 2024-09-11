@@ -1126,12 +1126,6 @@
 	status = "okay";
 };
 
-&usb_host1_xhci {
-	phy-names = "usb2-phy", "usb3-phy";
-	phys = <&usb2phy1_host>, <&combphy1 PHY_TYPE_USB3>;
-	status = "okay";
-};
-
 &combphy1_usq {
 	status = "okay";
 };
