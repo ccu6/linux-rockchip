@@ -1007,7 +1007,8 @@ static int rk817_hw_params(struct snd_pcm_substream *substream,
 	unsigned int rate = params_rate(params);
 	unsigned char apll_cfg3_val;
 	unsigned char dtop_digen_sr_lmt0;
-
+	unsigned char dtop_digen_clke;
+	
 	DBG("%s : sample rate = %dHz\n", __func__, rate);
 
 	if (rk817->chip_ver <= 0x4) {
