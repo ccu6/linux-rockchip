@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "drm_panel.h": "c",
+        "drm_atomic_helper.h": "c",
+        "drm_mipi_dbi.h": "c",
+        "drm_fb_helper.h": "c",
+        "dma-buf.h": "c",
+        "mipi_display.h": "c",
+        "rk817_codec.h": "c",
+        "module.h": "c",
+        "memory": "c",
+        "random": "c"
+    }
+}

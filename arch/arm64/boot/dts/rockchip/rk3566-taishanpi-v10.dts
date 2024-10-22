@@ -808,14 +808,25 @@
 	pinctrl-1 = <&spi3_cs0n &spi3_cs1n &spi3m1_pins_hs>;
 	cs-gpios = <&gpio4 RK_PC6 GPIO_ACTIVE_LOW>, <&gpio3 RK_PA7 GPIO_ACTIVE_LOW>;
     
-	spi0_dev@0 {
-        compatible = "rockchip,spidev";
-        reg = <0>;
-        spi-max-frequency = <12000000>;
-        spi-lsb-first;
-		status = "okay";
-    };
+	// spi0_dev@0 {
+    //     compatible = "rockchip,spidev";
+    //     reg = <0>;
+    //     spi-max-frequency = <12000000>;
+    //     spi-lsb-first;
+	// 	status = "okay";
+    // };
 
+	display@0{
+		compatible = "CCU6,st7789v-tinydrm";
+        reg = <0>;                          // SPI 从设备号（CS引脚）
+        spi-max-frequency = <40000000>;      // SPI 最大频率，调整为合适值
+        rotate = <90>;                      	// 可选：屏幕旋转角度，90, 180, 270 等
+        reset-gpios = <&gpio3 RK_PC2 GPIO_ACTIVE_LOW>;  // 复位引脚
+        dc-gpios = <&gpio3 RK_PB0 GPIO_ACTIVE_HIGH>;    // 数据/命令选择引脚
+		buswidth = <8>;
+		status = "okay";
+	};
+	
 	xpt2046@1 {
 		pinctrl-names = "default";
 		pinctrl-0 = <&xpt2046_int_pin>;
@@ -845,6 +856,7 @@
 		/delete-property/ linux,wakeup;
 		/delete-property/ wakeup-source;
 	};
+
 };
 
 &pwm8 {
